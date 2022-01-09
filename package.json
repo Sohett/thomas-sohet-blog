@@ -1,8 +1,8 @@
 {
-  "name": "megan-blog",
+  "name": "thomas-sohet-blog",
   "version": "1.0.0",
-  "description": "Animal Crossing Blog by Megan",
-  "author": "sdras",
+  "description": "Thomas Sohet personal blog",
+  "author": "Thomas Sohet",
   "private": true,
   "scripts": {
     "dev": "nuxt",
