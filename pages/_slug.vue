@@ -6,8 +6,8 @@
       </p>
       <h1>{{ post.fields.title }}</h1>
       <p class="blog-details">
-        <span>{{ humanDate(post.fields.publishDate) }}</span>
-        <span v-for="tag in post.fields.tags" :key="tag" class='hashtag' style="margin: 0px 5px">
+        <span>Published: {{ humanDate(post.fields.publishDate) }} | </span>
+        <span v-for="tag in post.fields.tags" :key="tag" class='hashtag' style="margin: 2px 6px 2px 0px">
           {{ tag }}
         </span>
       </p>
@@ -62,10 +62,11 @@ export default {
 
 .back {
   width: 160px;
-  padding: 5px;
+  padding: 8px;
   border-radius: 8px;
   margin-top: 20px;
   margin-bottom: 20px;
+  margin-left: -4px;
 }
 
 .back:hover {

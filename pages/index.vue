@@ -24,7 +24,7 @@
             {{ post.fields.description }}
           </p>
           <p class="blog-details">
-            <span>Publish: {{ humanDate(post.fields.publishDate) }}</span>
+            <span>Published: {{ humanDate(post.fields.publishDate) }} | </span>
             <span v-for="tag in post.fields.tags" :key="tag" class='hashtag' style="margin: 2px 6px 2px 0px">
               {{ tag }}
             </span>
@@ -102,15 +102,24 @@ section {
 }
 
 .blog-details {
-  margin: 5px 0;
+  margin: 10px 0;
   margin-right: 5px;
   font-size: 14px;
   color: #818a9b
 }
 
 .more {
+  margin-left: -8px;
+  width: 160px;
+  padding: 8px;
+  border-radius: 8px;
   margin-top: 5px;
   margin-bottom: 20px;
+}
+
+.more:hover {
+  background-color: #f4f5f7;
+  color: #5b87ff;
 }
 
 .header {
@@ -147,6 +156,7 @@ section {
   .description {
     margin-top: 10px;
     margin-bottom: 10px;
+    margin-right: 15px;
   }
 
   .title {
@@ -160,6 +170,14 @@ section {
 
   .image {
     display: none;
+  }
+
+  .blog-details {
+    margin: 20px 0;
+  }
+
+  .blog-post-overview {
+    padding-bottom: 25px;
   }
 }
 
