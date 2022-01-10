@@ -2,7 +2,7 @@
   <main>
     <header class="header">
       <about-me></about-me>
-      <p style="text-align: center">This is just a simple blog about <span class="hashtag">#tech</span> <span class="hashtag">#product mana</span> <span class="hashtag">#managing engineers</span> <span class="hashtag">#devOps</span>. I just share some of my thoughts and experiences from my career. Hopefully you can find some interesting pieces for you. Don't hesitate to reach out to discuss more about it.</p>
+      <p style="text-align: center">This is just a simple blog about topics that seems important to me like <span class="hashtag">#tech</span> <span class="hashtag">#product mana</span> <span class="hashtag">#management</span> <span class="hashtag">#devOps</span>. I just share some of my thoughts and experiences from my career. Hopefully you can find some interesting pieces for you. Don't hesitate to reach out (through <a href="https://www.linkedin.com/in/thomas-sohet-5291a868/">Linkedin</a>) to discuss more about it.</p>
     </header>
     <div class="blog-posts">
       <section class="blog-post" v-for="post in posts" :key="post.fields.slug">
@@ -19,11 +19,18 @@
         <h2 class="title">
           <nuxt-link :to="post.fields.slug">{{ post.fields.title }}</nuxt-link>
         </h2>
-        <p class="description">
-          {{ post.fields.description }}
-          <br><br>
-          <nuxt-link :to="post.fields.slug" class="more">Read more ⟶</nuxt-link>
-        </p>
+        <div class="blog-post-overview">
+          <p class="description">
+            {{ post.fields.description }}
+          </p>
+          <p class="blog-details">
+            <span>{{ humanDate(post.fields.publishDate) }}</span>
+            <span v-for="tag in post.fields.tags" :key="tag" class='hashtag' style="margin: 0px 5px">
+              {{ tag }}
+            </span>
+          </p>
+          <nuxt-link :to="post.fields.slug" class="more">Read more →</nuxt-link>
+        </div>
       </section>
     </div>
   </main>
@@ -39,13 +46,22 @@ export default {
       return this.$store.state.posts;
     }
   },
+  methods: {
+    humanDate(date) {
+      return new Date(date).toDateString();
+    }
+  },
   head: {
-    title: "Thomas Sohet, Blog posts"
+    title: "Thomas Sohet | Blog"
   }
 };
 </script>
 
 <style lang="scss" scoped>
+main {
+  margin: 0px 20px;
+}
+
 section {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -53,7 +69,7 @@ section {
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   padding: 30px 0;
-  min-height: 250px;
+  min-height: 260px;
 
   h2 {
     font-size: 20px;
@@ -65,29 +81,46 @@ section {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 640px) {
   section {
-    grid-template-rows: 40px 20px 1fr;
+    grid-template-columns: none;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .image {
+    display: none;
   }
 }
 
 .image {
+  height: 100%;
   grid-area: 1 / 1 / 4 / 3;
   opacity: 0.8;
 }
 .title {
-  margin: 20px 0;
+  margin: 15px 0;
   grid-area: 1 / 3 / 2 / 6;
 }
-.description {
+
+.blog-post-overview {
   grid-area: 2 / 3 / 3 / 6;
+  height: auto;
+  min-height: 100px;
 }
-// .description {
-//   grid-area: 3 / 3 / 4 / 6;
-// }
+
+.description {
+  margin: 20px 10px 10px 0;
+}
+
+.blog-details {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #818a9b
+}
 
 .more {
-  color: #5b87ff;
+  margin-bottom: 20px;
 }
 
 .header {
@@ -110,8 +143,7 @@ section {
   margin: 50px auto;
   padding: 0px;
   border-radius: 10px;
-  border: #f4f5f7;
-  border-width: 1px;
-  border-style: solid;
+  box-shadow: 0px 3px 20px 0px rgba(107, 114, 128, 0.2);
+  overflow: hidden;
 }
 </style>

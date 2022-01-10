@@ -1,17 +1,23 @@
 <template>
-  <div>
+  <div style="margin: 0px 20px;">
     <section class="container">
       <p class="back">
-        <nuxt-link exact to="/">⟵ Back to Home</nuxt-link>
+        <nuxt-link exact to="/">← Back to Home</nuxt-link>
       </p>
       <h1>{{ post.fields.title }}</h1>
+      <p class="blog-details">
+        <span>{{ humanDate(post.fields.publishDate) }}</span>
+        <span v-for="tag in post.fields.tags" :key="tag" class='hashtag' style="margin: 0px 5px">
+          {{ tag }}
+        </span>
+      </p>
       <div
         class="image"
-        :style="
-          `background: url(https:${post.fields.heroImage.fields.file.url}) center center no-repeat`
-        "
+        :style="`
+          background-image: url(https:${post.fields.heroImage.fields.file.url});
+        `"
       ></div>
-      <article v-html="$md.render(post.fields.body)"></article>
+      <article style="margin-top: 40px" v-html="$md.render(post.fields.body)"></article>
     </section>
     <br>
     <about-me style="max-width: 1000px; margin-left: auto; margin-right: auto;"></about-me>
@@ -36,6 +42,11 @@ export default {
       return post[0];
     }
   },
+  methods: {
+    humanDate(date) {
+      return new Date(date).toDateString();
+    }
+  },
   head() {
     return {
       title: this.post.fields.title
@@ -47,12 +58,21 @@ export default {
 <style lang="scss" scoped>
 .back {
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .image {
   width: 100%;
   height: 300px;
   margin: 30px 0;
-  background-size: 100% auto !important;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.blog-details {
+  margin: 15px 0;
+  font-size: 14px;
+  color: #818a9b
 }
 </style>
