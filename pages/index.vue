@@ -25,7 +25,7 @@
           </p>
           <p class="blog-details">
             <span>Publish: {{ humanDate(post.fields.publishDate) }}</span>
-            <span v-for="tag in post.fields.tags" :key="tag" class='hashtag' style="margin: 2px 6px">
+            <span v-for="tag in post.fields.tags" :key="tag" class='hashtag' style="margin: 2px 6px 2px 0px">
               {{ tag }}
             </span>
           </p>
@@ -86,6 +86,7 @@ section {
 }
 .title {
   margin-top: 10px;
+  margin-right: 8px;
   grid-area: 1 / 3 / 2 / 6;
 }
 
@@ -102,6 +103,7 @@ section {
 
 .blog-details {
   margin: 5px 0;
+  margin-right: 5px;
   font-size: 14px;
   color: #818a9b
 }
