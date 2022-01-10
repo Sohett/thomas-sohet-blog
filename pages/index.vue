@@ -2,7 +2,7 @@
   <main>
     <header class="header">
       <about-me></about-me>
-      <p style="text-align: center">This is just a simple blog about topics that seems important to me like <span class="hashtag">#tech</span> <span class="hashtag">#product mana</span> <span class="hashtag">#management</span> <span class="hashtag">#devOps</span>. I just share some of my thoughts and experiences from my career. Hopefully you can find some interesting pieces for you. Don't hesitate to reach out (through <a href="https://www.linkedin.com/in/thomas-sohet-5291a868/">Linkedin</a>) to discuss more about it.</p>
+      <p style="text-align: center">This is just a simple blog about topics that seems important to me like <span class="hashtag">#tech</span> <span class="hashtag">#product mana</span> <span class="hashtag">#management</span> <span class="hashtag">#devOps</span>. I just share some of my thoughts and experiences from my career. Hopefully you can find some interesting pieces for you. Don't hesitate to reach out to discuss more about it.</p>
     </header>
     <div class="blog-posts">
       <section class="blog-post" v-for="post in posts" :key="post.fields.slug">
@@ -111,6 +111,8 @@ section {
 
 .description {
   margin: 20px 10px 10px 0;
+  max-height: 120px;
+  overflow: scroll;
 }
 
 .blog-details {
