@@ -52,29 +52,69 @@ hr {
 }
 
 h1 {
-  line-height: 3rem;
-}
-
-h2 {
-  line-height: 2rem;
-}
-
-h3 {
-  font-weight: 500;
-  margin-top: 30px;
-  line-height: 2rem;
-}
-
-h1 {
   font-size: 50px;
   font-weight: 600;
+  line-height: 3rem;
   font-family: "Inter";
   color: #111926;
 }
 
+h2 {
+  font-family: "Inter";
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 2.5rem;
+  margin-top: 35px;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 550;
+  margin-top: 30px;
+  line-height: 2rem;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 550;
+  margin-top: 20px;
+  line-height: 1.6rem;
+}
+
 p {
   font-weight: 400;
-  margin-top: 15px;
+  margin-top: 8px;
+}
+
+@media only screen and (max-width: 640px) {
+
+  h2 {
+    font-size: 25px;
+    line-height: 1.5rem;
+  }
+
+  h1 {
+    font-size: 30px;
+    line-height: 2rem;
+  }
+
+  h2 {
+    font-size: 25px;
+    line-height: 1.7rem;
+    margin-top: 30px;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    line-height: 1.6rem;
+  }
+
+  h4 {
+    font-size: 18px;
+    margin-top: 20px;
+    line-height: 1.6rem;
+  }
 }
 
 code {

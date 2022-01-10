@@ -1,5 +1,5 @@
 <template>
-  <div style="margin: 0px 20px;">
+  <div class="blog-article">
     <section class="container">
       <p class="back">
         <nuxt-link exact to="/">← Back to Home</nuxt-link>
@@ -56,9 +56,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.blog-article {
+  margin: 0px 20px;
+}
+
 .back {
+  width: 160px;
+  padding: 5px;
+  border-radius: 8px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.back:hover {
+  background-color: #f4f5f7;
+  a:hover {
+    color: #5b87ff;
+  }
 }
 
 .image {
@@ -74,5 +88,16 @@ export default {
   margin: 15px 0;
   font-size: 14px;
   color: #818a9b
+}
+
+@media only screen and (max-width: 640px) {
+  .blog-article {
+    margin: 0px 8px;
+  }
+
+  .container {
+    margin: 8px auto;
+    padding: 10px 25px 50px;
+  }
 }
 </style>

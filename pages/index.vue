@@ -24,8 +24,8 @@
             {{ post.fields.description }}
           </p>
           <p class="blog-details">
-            <span>{{ humanDate(post.fields.publishDate) }}</span>
-            <span v-for="tag in post.fields.tags" :key="tag" class='hashtag' style="margin: 0px 5px">
+            <span>Publish: {{ humanDate(post.fields.publishDate) }}</span>
+            <span v-for="tag in post.fields.tags" :key="tag" class='hashtag' style="margin: 2px 6px">
               {{ tag }}
             </span>
           </p>
@@ -65,11 +65,9 @@ main {
 section {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 20px 20px 1fr;
   grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-row-gap: 10px;
   padding: 30px 0;
-  min-height: 260px;
 
   h2 {
     font-size: 20px;
@@ -81,25 +79,13 @@ section {
   }
 }
 
-@media only screen and (max-width: 640px) {
-  section {
-    grid-template-columns: none;
-  }
-}
-
-@media only screen and (max-width: 640px) {
-  .image {
-    display: none;
-  }
-}
-
 .image {
   height: 100%;
   grid-area: 1 / 1 / 4 / 3;
   opacity: 0.8;
 }
 .title {
-  margin: 15px 0;
+  margin-top: 10px;
   grid-area: 1 / 3 / 2 / 6;
 }
 
@@ -107,21 +93,21 @@ section {
   grid-area: 2 / 3 / 3 / 6;
   height: auto;
   min-height: 100px;
+  padding-bottom: 10px;
 }
 
 .description {
-  margin: 20px 10px 10px 0;
-  max-height: 120px;
-  overflow: scroll;
+  margin-right: 10px;
 }
 
 .blog-details {
-  margin: 4px 0;
+  margin: 5px 0;
   font-size: 14px;
   color: #818a9b
 }
 
 .more {
+  margin-top: 5px;
   margin-bottom: 20px;
 }
 
@@ -148,4 +134,31 @@ section {
   box-shadow: 0px 3px 20px 0px rgba(107, 114, 128, 0.2);
   overflow: hidden;
 }
+
+@media only screen and (max-width: 640px) {
+  section {
+    grid-template-columns: none;
+    grid-row-gap: 0;
+    grid-column-gap: 10px;
+  }
+
+  .description {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    line-height: 1.5rem;
+  }
+
+  .image {
+    display: none;
+  }
+}
+
 </style>
