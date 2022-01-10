@@ -1,5 +1,7 @@
 <template>
-  <footer></footer>
+  <footer>
+    <p class="centered">Copyright © 2022 Thomas Sohet.</p>
+  </footer>
 </template>
 
 <script>
@@ -8,9 +10,20 @@ export default {};
 
 <style lang="scss" scoped>
 footer {
-  background: url(../assets/footer-bk.jpg) no-repeat center bottom, #112545;
-  background-size: 100% auto;
+  clear: both;
+  position: relative;
+  height: 30px;
+  margin-top: 50px;
+  margin-bottom: 10px;
   width: 100%;
-  height: 37vw;
+  font-size: 16px;
+  color: #434750;
+}
+
+.centered {
+  text-align: center;
+  margin-left: 40px;
+  margin-right: 40px;
+  color: #434750;
 }
 </style>

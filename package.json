@@ -14,9 +14,11 @@
     "@nuxtjs/markdownit": "^1.2.9",
     "contentful": "^7.14.2",
     "dotenv": "^8.2.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.0",
     "nuxt": "^2.0.0",
     "sass-loader": "^8.0.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "gulp-sass": "^5.1.0"
+  }
 }
