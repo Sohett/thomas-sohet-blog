@@ -12,13 +12,16 @@
           {{ tag }}
         </span>
       </p>
-      <div
-        class="image"
-        :style="`
-          background-image: url(https:${post.fields.heroImage.fields.file.url});
-        `"
-      ></div>
-      <article style="margin-top: 40px" v-html="$md.render(post.fields.body)"></article>
+      <img
+      style="
+        margin-top: 20px;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        box-shadow: none;"
+      :src="post.fields.heroImage.fields.file.url" :alt="post.fields.heroImage.fields.title">
+      <article style="margin-top: 40px;" v-html="markdown(post.fields.body)"></article>
     </section>
     <br>
     <about-me style="max-width: 1000px; margin-left: auto; margin-right: auto;"></about-me>

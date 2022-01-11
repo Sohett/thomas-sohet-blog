@@ -52,7 +52,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/contentful", "~/plugins/posts"],
+  plugins: ["~/plugins/contentful", "~/plugins/posts", "~/plugins/author"],
   /*
    ** Environment variables
    */
@@ -60,10 +60,6 @@ export default {
     CONTENTFUL_SPACE: process.env.CONTENTFUL_SPACE,
     CONTENTFUL_ACCESSTOKEN: process.env.CONTENTFUL_ACCESSTOKEN,
     CONTENTFUL_ENVIRONMENT: process.env.CONTENTFUL_ENVIRONMENT
-  },
-  modules: ["@nuxtjs/markdownit"],
-  markdownit: {
-    injected: true
   },
   generate: {
     routes() {

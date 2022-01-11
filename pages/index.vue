@@ -3,7 +3,7 @@
     <header class="header">
       <toggle-theme></toggle-theme>
       <about-me></about-me>
-      <p style="text-align: center">This is just a simple blog about topics that seems important to me like <span class="hashtag">#tech</span> <span class="hashtag">#product mana</span> <span class="hashtag">#management</span> <span class="hashtag">#devOps</span>. I just share some of my thoughts and experiences from my career. Hopefully you can find some interesting pieces for you. Don't hesitate to reach out to discuss more about it.</p>
+      <p style="text-align: center;" v-html="markdown(author.fields.goal)"></p>
     </header>
     <div class="blog-posts">
       <section class="blog-post" v-for="post in posts" :key="post.fields.slug">
@@ -46,6 +46,9 @@ export default {
   computed: {
     posts() {
       return this.$store.state.posts;
+    },
+    author () {
+      return this.$store.state.author;
     }
   },
   methods: {

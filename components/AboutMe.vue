@@ -2,17 +2,23 @@
   <div>
     <img src="../assets/avatar.png" class='avatar' alt="">
     <h3 class="centered">
-      Thomas Sohet
+      {{ author.fields.name }}
     </h3>
-    <p class="centered" style="font-size: 16px">
-      Currently CTO @<a target="_blank" href="https://seraphin.be">Seraphin</a>, I am passionate about developing well crafted web products with talented people.
-      <br><a target="_blank" href="https://www.linkedin.com/in/thomas-sohet-5291a868/">Linkedin</a> - <a target="_blank" href="https://github.com/Sohett">Github</a> - <a target="_blank" href="https://twitter.com/thomas_sohet">Twitter</a>
+    <p class="centered" style="font-size: 16px" v-html="markdown(author.fields.shortBio)"></p>
+    <p class="centered">
+      <a target="_blank" :href='author.fields.linkedin'>Linkedin</a> - <a target="_blank" :href="author.fields.github">Github</a> - <a target="_blank" :href="author.fields.twitter">Twitter</a>
     </p>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    author () {
+      return this.$store.state.author;
+    },
+  }
+};
 </script>
 
 <style lang="scss" scoped>
