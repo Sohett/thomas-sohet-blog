@@ -30,11 +30,9 @@ div {
   margin-top: 40px;
   text-align: center;
   width: 15vh;
-  color: #434750
 }
 
 .centered {
   text-align: center;
-  color: #434750;
 }
 </style>
