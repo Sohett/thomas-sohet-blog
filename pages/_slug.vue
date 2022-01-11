@@ -12,15 +12,7 @@
           {{ tag }}
         </span>
       </p>
-      <img
-      style="
-        margin-top: 20px;
-        width: 100%;
-        background-size: cover;
-        background-position: center;
-        border-radius: 10px;
-        box-shadow: none;"
-      :src="post.fields.heroImage.fields.file.url" :alt="post.fields.heroImage.fields.title">
+      <img class="image" :src="post.fields.heroImage.fields.file.url" :alt="post.fields.heroImage.fields.title">
       <article style="margin-top: 40px;" v-html="markdown(post.fields.body)"></article>
     </section>
     <br>
@@ -67,11 +59,13 @@ export default {
 
 .image {
   width: 100%;
-  height: 300px;
+  height: 100%;
   margin: 30px 0;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  border-radius: 10px;
+  box-shadow: none;
 }
 
 .blog-details {
