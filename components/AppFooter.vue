@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p class="centered">Copyright © 2022 Thomas Sohet.</p>
+    <p class="centered footer">Copyright © 2022 Thomas Sohet.</p>
   </footer>
 </template>
 
@@ -17,13 +17,11 @@ footer {
   margin-bottom: 10px;
   width: 100%;
   font-size: 16px;
-  color: #434750;
 }
 
 .centered {
   text-align: center;
   margin-left: 40px;
   margin-right: 40px;
-  color: #434750;
 }
 </style>

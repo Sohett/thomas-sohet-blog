@@ -1,6 +1,7 @@
 <template>
   <main>
     <header class="header">
+      <toggle-theme></toggle-theme>
       <about-me></about-me>
       <p style="text-align: center">This is just a simple blog about topics that seems important to me like <span class="hashtag">#tech</span> <span class="hashtag">#product mana</span> <span class="hashtag">#management</span> <span class="hashtag">#devOps</span>. I just share some of my thoughts and experiences from my career. Hopefully you can find some interesting pieces for you. Don't hesitate to reach out to discuss more about it.</p>
     </header>
@@ -38,9 +39,10 @@
 
 <script>
 import AboutMe from '../components/AboutMe.vue';
+import ToggleTheme from '../components/ToggleTheme.vue';
 
 export default {
-  components: {AboutMe},
+  components: {AboutMe, ToggleTheme},
   computed: {
     posts() {
       return this.$store.state.posts;
@@ -105,21 +107,6 @@ section {
   margin: 10px 0;
   margin-right: 5px;
   font-size: 14px;
-  color: #818a9b
-}
-
-.more {
-  margin-left: -8px;
-  width: 160px;
-  padding: 8px;
-  border-radius: 8px;
-  margin-top: 5px;
-  margin-bottom: 20px;
-}
-
-.more:hover {
-  background-color: #f4f5f7;
-  color: #5b87ff;
 }
 
 .header {
@@ -138,11 +125,9 @@ section {
 }
 
 .blog-post {
-  background-color: #ffffff;
   margin: 50px auto;
   padding: 0px;
   border-radius: 10px;
-  box-shadow: 0px 3px 20px 0px rgba(107, 114, 128, 0.2);
   overflow: hidden;
 }
 

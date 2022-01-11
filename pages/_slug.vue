@@ -1,6 +1,7 @@
 <template>
   <div class="blog-article">
     <section class="container">
+      <toggle-theme></toggle-theme>
       <p class="back">
         <nuxt-link exact to="/">← Back to Home</nuxt-link>
       </p>
@@ -26,9 +27,10 @@
 
 <script>
 import AboutMe from "@/components/AboutMe.vue";
+import ToggleTheme from '../components/ToggleTheme.vue';
 
 export default {
-  components: {AboutMe},
+  components: {AboutMe, ToggleTheme},
   data() {
     return {
       slug: this.$route.params.slug
@@ -60,22 +62,6 @@ export default {
   margin: 0px 20px;
 }
 
-.back {
-  width: 160px;
-  padding: 8px;
-  border-radius: 8px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: -4px;
-}
-
-.back:hover {
-  background-color: #f4f5f7;
-  a:hover {
-    color: #5b87ff;
-  }
-}
-
 .image {
   width: 100%;
   height: 300px;
@@ -88,7 +74,6 @@ export default {
 .blog-details {
   margin: 15px 0;
   font-size: 14px;
-  color: #818a9b
 }
 
 @media only screen and (max-width: 640px) {
