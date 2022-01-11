@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="margin: 0 12px;">
     <client-only>
       <div class="header">
         <toggle-theme/>
@@ -120,7 +120,7 @@ section {
 
 .blog-details {
   margin: 10px 0;
-  margin-right: 5px;
+  margin-right: 8px;
   font-size: 14px;
 }
 
@@ -174,6 +174,7 @@ section {
 
   .blog-details {
     margin: 20px 0;
+    margin-right: 8px;
   }
 
   .blog-post-overview {

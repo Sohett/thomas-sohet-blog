@@ -83,12 +83,12 @@ export default {
 
 @media only screen and (max-width: 640px) {
   .blog-article {
-    margin: 0px 8px;
+    margin: 0px 10px;
   }
 
   .container {
     margin: 8px auto;
-    padding: 10px 25px 50px;
+    padding: 10px 20px 50px;
   }
 }
 </style>
