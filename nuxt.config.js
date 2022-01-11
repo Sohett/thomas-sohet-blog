@@ -52,7 +52,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/contentful", "~/plugins/posts", "~/plugins/author"],
+  plugins: ["~/plugins/contentful", "~/plugins/posts", "~/plugins/authors"],
   /*
    ** Environment variables
    */

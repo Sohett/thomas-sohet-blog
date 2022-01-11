@@ -9,13 +9,6 @@ export default {
       // render
       let res = md.render(src);
 
-      // pretty print
-
-      // res = res.replace(/\>\n/g, '>\n\n');
-      // res = res.replace(/\>\</g, '>\n<');
-      // res = res.replace(/\</g, '&lt;');
-      // res = res.replace(/\>/g, '&gt;');
-
       return res;
     }
   }

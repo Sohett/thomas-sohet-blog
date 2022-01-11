@@ -1,10 +1,12 @@
 <template>
-  <main>
-    <header class="header">
-      <toggle-theme></toggle-theme>
-      <about-me></about-me>
-      <p style="text-align: center;" v-html="markdown(author.fields.goal)"></p>
-    </header>
+  <div>
+    <client-only>
+      <div class="header">
+        <toggle-theme/>
+        <about-me/>
+        <p style="text-align: center;" v-html="markdown(author.fields.goal)"></p>
+      </div>
+    </client-only>
     <div class="blog-posts">
       <section class="blog-post" v-for="post in posts" :key="post.fields.slug">
         <div
@@ -34,7 +36,7 @@
         </div>
       </section>
     </div>
-  </main>
+  </div>
 </template>
 
 <script>
@@ -43,12 +45,22 @@ import ToggleTheme from '../components/ToggleTheme.vue';
 
 export default {
   components: {AboutMe, ToggleTheme},
+  data () {
+    return {
+      defaultAuthor: {
+        fields: {
+          goal: '',
+          heroImage: { fields: { file: { url: '' } } }
+        }
+      }
+    }
+  },
   computed: {
     posts() {
       return this.$store.state.posts;
     },
     author () {
-      return this.$store.state.author;
+      return this.$store.state.authors[0];
     }
   },
   methods: {

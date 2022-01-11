@@ -1,8 +1,8 @@
 <template>
   <div class="theme-toggle">
     <button class="theme-toggle-button" @click="toggleTheme" aria-label="Toggle themes">
-      <span v-if="this.theme == 'darkMode'"><img src="../assets/bright-icon.svg"/></span>
-      <span v-else><img src="../assets/moon-icon.svg"/></span>
+      <span v-show="this.theme == 'darkMode'"><img src="../assets/bright-icon.svg"/></span>
+      <span v-show="this.theme != 'darkMode'"><img src="../assets/moon-icon.svg"/></span>
     </button>
   </div>
 </template>

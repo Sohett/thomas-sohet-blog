@@ -2,15 +2,15 @@ import client from "~/plugins/contentful";
 
 export const state = () => ({
   posts: null,
-  author: null,
+  authors: null,
 });
 
 export const mutations = {
   updatePosts: (state, posts) => {
     state.posts = posts;
   },
-  updateAuthor: (state, author) => {
-    state.author = author;
+  updateAuthors: (state, authors) => {
+    state.authors = authors;
   }
 };
 
@@ -26,13 +26,13 @@ export const actions = {
       console.error(err);
     }
   },
-  async getAuthor({ commit }) {
+  async getAuthors({ commit }) {
     try {
       if (!client) return;
       const response = await client.getEntries({
         content_type: "author"
       });
-      if (response.items.length > 0) commit("updateAuthor", response.items[0]);
+      if (response.items.length > 0) commit("updateAuthors", response.items);
     } catch (err) {
       console.error(err);
     }
