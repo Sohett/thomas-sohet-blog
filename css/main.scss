@@ -152,6 +152,16 @@ p {
   }
 }
 
+.avatar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 40px;
+  text-align: center;
+  width: 15vh;
+}
+
 code {
   background-color: var(--background-color);
   padding-left: 4px;

@@ -1,12 +1,10 @@
 <template>
   <div style="margin: 0 12px;">
-    <client-only>
-      <div class="header">
-        <toggle-theme/>
-        <about-me/>
-        <p style="text-align: center;" v-html="markdown(author.fields.goal)"></p>
-      </div>
-    </client-only>
+    <div class="header">
+      <toggle-theme/>
+      <about-me/>
+      <client-only><p style="text-align: center;" v-html="markdown(author.fields.goal)"></p></client-only>
+    </div>
     <div class="blog-posts">
       <section class="blog-post" v-for="post in posts" :key="post.fields.slug">
         <div
