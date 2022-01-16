@@ -5,15 +5,20 @@
       <p class="back">
         <nuxt-link exact to="/">← Back to Home</nuxt-link>
       </p>
-      <h1>{{ post.fields.title }}</h1>
-      <p class="blog-details">
-        <span>Published: {{ humanDate(post.fields.publishDate) }} | </span>
-        <span v-for="tag in post.fields.tags" :key="tag" class='hashtag' style="margin: 2px 6px 2px 0px">
-          {{ tag }}
-        </span>
-      </p>
-      <img class="image" :src="post.fields.heroImage.fields.file.url" :alt="post.fields.heroImage.fields.title">
-      <article style="margin-top: 40px;" v-html="markdown(post.fields.body)"></article>
+      <div v-if="post">
+        <h1>{{ post.fields.title }}</h1>
+        <p class="blog-details">
+          <span>Published: {{ humanDate(post.fields.publishDate) }} | </span>
+          <span v-for="tag in post.fields.tags" :key="tag" class='hashtag' style="margin: 2px 6px 2px 0px">
+            {{ tag }}
+          </span>
+        </p>
+        <img class="image" :src="post.fields.heroImage.fields.file.url" :alt="post.fields.heroImage.fields.title">
+        <article style="margin-top: 40px;" v-html="markdown(post.fields.body)"></article>
+      </div>
+      <div v-else>
+        This post seems to be still a work in progress. Come a little later to see if it has been published.
+      </div>
     </section>
     <br>
     <about-me style="max-width: 1000px; margin-left: auto; margin-right: auto;"></about-me>
@@ -46,7 +51,7 @@ export default {
   },
   head() {
     return {
-      title: this.post.fields.title
+      title: this.post ? this.post.fields.title : ''
     };
   }
 };

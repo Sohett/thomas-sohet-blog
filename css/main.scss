@@ -8,7 +8,9 @@ $white: #ffffff;
 $dark: #13171f;
 $dark-gray: #191f2a;
 $blue: #5b87ff;
-$light-blue: rgba(91, 135, 255, 0.8);
+$dark-blue: #4167d1;
+$indigo-blue: #7398ff;
+$light-blue: rgba(91, 135, 255, 0.7);
 
 :root {
   --background-color: #{$light-gray};
@@ -19,6 +21,7 @@ $light-blue: rgba(91, 135, 255, 0.8);
   --container-background-color: #{$white};
   --header-color: #{$dark};
   --box-shadow-color: rgba(107, 114, 128, 0.2);
+  --code-color: #{$dark-blue};
 }
 
 [data-theme="darkMode"] {
@@ -31,6 +34,7 @@ $light-blue: rgba(91, 135, 255, 0.8);
   --header-color: #{$white};
   --shadow-color: #{$gray};
   --box-shadow-color: rgba(107, 114, 128, 0.001);
+  --code-color: #{$indigo-blue};
 }
 
 html {
@@ -162,6 +166,22 @@ p {
   width: 15vh;
 }
 
+pre {
+  overflow-x: auto;
+  background-color: var(--background-color);
+  margin: 10px 0 20px 0;
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  line-height:1.4rem;
+  code {
+    background-color: none;
+    color: var(--code-color);
+  }
+}
+
 code {
   background-color: var(--background-color);
   padding-left: 4px;
@@ -179,7 +199,7 @@ blockquote {
   padding-right: 10px;
   padding-bottom: 10px;
   border-radius: 4px;
-  border-left:5px solid var(--secondary-color);;
+  border-left:5px solid var(--secondary-color);
   line-height:1.6rem;
   font-style:italic;
 }

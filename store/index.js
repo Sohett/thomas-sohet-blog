@@ -21,7 +21,10 @@ export const actions = {
       const response = await client.getEntries({
         content_type: "blogPost"
       });
-      if (response.items.length > 0) commit("updatePosts", response.items);
+      if (response.items.length > 0) {
+        const posts = process.env.NODE_ENV == 'development' ? response.items : response.items.filter(item => !item.fields.workInProgress)
+        commit("updatePosts", posts);
+      }
     } catch (err) {
       console.error(err);
     }
