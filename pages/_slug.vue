@@ -14,7 +14,7 @@
           </span>
         </p>
         <img class="image" :src="post.fields.heroImage.fields.file.url" :alt="post.fields.heroImage.fields.title">
-        <article style="margin-top: 40px;" v-html="markdown(post.fields.body)"></article>
+        <article v-html="markdown(post.fields.body)"></article>
       </div>
       <div v-else>
         This post seems to be still a work in progress. Come a little later to see if it has been published.
@@ -65,7 +65,7 @@ export default {
 .image {
   width: 100%;
   height: 100%;
-  margin: 30px 0;
+  margin: 8px 0;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -85,7 +85,7 @@ export default {
 
   .container {
     margin: 8px auto;
-    padding: 10px 20px 50px;
+    padding: 10px 18px 50px;
   }
 }
 </style>
