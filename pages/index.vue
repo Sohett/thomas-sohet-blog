@@ -86,6 +86,8 @@ section {
 
   h2 {
     font-size: 20px;
+    padding-bottom: 0;
+    border: none;
   }
 
   p {
