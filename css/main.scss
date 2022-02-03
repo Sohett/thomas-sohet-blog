@@ -232,6 +232,12 @@ blockquote {
   font-style:italic;
 }
 
+article {
+  img {
+    max-width: 100%;
+  }
+}
+
 .author {
   font-style: italic;
   color: var(--secondary-color);;
