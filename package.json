@@ -13,12 +13,13 @@
   "dependencies": {
     "contentful": "^7.14.2",
     "dotenv": "^8.2.0",
-    "marked": "^4.0.9",
+    "marked": "^4.0.12",
     "node-sass": "^4.14.0",
     "nuxt": "^2.0.0",
     "prism-themes": "^1.9.0",
-    "prismjs": "^1.26.0",
-    "sass-loader": "^8.0.2"
+    "prismjs": "^1.27.0",
+    "sass-loader": "^8.0.2",
+    "vue-js-modal": "^2.0.1"
   },
   "devDependencies": {
     "gulp-sass": "^5.1.0"

@@ -58,7 +58,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/contentful", "~/plugins/posts", "~/plugins/authors"],
+  plugins: ["~/plugins/contentful", "~/plugins/posts", "~/plugins/authors", "~plugins/vue-js-modal.js"],
   /*
    ** Environment variables
    */

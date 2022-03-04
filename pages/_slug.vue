@@ -1,5 +1,8 @@
 <template>
   <div class="blog-article">
+    <modal name="imageModal" :adaptative="true" width="80%" height="auto">
+      <img :src="modalImgSrc" class="image-modal">
+    </modal>
     <section class="container">
       <toggle-theme></toggle-theme>
       <p class="back">
@@ -33,8 +36,18 @@ export default {
   components: {AboutMe, ToggleTheme},
   data() {
     return {
-      slug: this.$route.params.slug
+      slug: this.$route.params.slug,
+      modalImgSrc: null
     };
+  },
+  mounted () {
+    const article = document.querySelector("article");
+    article.querySelectorAll('img').forEach(link => {
+      link.addEventListener('click', this.toggleModal);
+    });
+  },
+  destroyed() {
+    this.$el.removeEventListener('click', this.toggleModal);
   },
   computed: {
     post() {
@@ -47,6 +60,10 @@ export default {
   methods: {
     humanDate(date) {
       return new Date(date).toDateString();
+    },
+    toggleModal (el) {
+      this.modalImgSrc = el.srcElement.currentSrc;
+      this.$modal.show('imageModal');
     }
   },
   head() {
@@ -70,6 +87,14 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 10px;
+  box-shadow: none;
+}
+
+.image-modal {
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   box-shadow: none;
 }
 

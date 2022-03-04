@@ -139,6 +139,12 @@ li {
   margin-top: 5px;
 }
 
+article {
+  img {
+    cursor: zoom-in;
+  }
+}
+
 @media only screen and (max-width: 640px) {
 
   h1 {

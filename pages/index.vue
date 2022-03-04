@@ -66,6 +66,9 @@ export default {
   methods: {
     humanDate(date) {
       return new Date(date).toDateString();
+    },
+    toggleModal () {
+      this.$modal.show('my-first-modal');
     }
   },
   head: {
