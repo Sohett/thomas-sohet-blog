@@ -67,6 +67,7 @@ export default {
     }
   },
   head() {
+    console.log(`https:${this.post.fields.heroImage.fields.file.url}`);
     return {
       title: this.post ? this.post.fields.title : '',
       meta: [
@@ -75,7 +76,7 @@ export default {
         { property: "og:url", content: this.post.fields.slug },
         { property: "og:description", content: this.post.fields.description },
         { property: "og:type", content: "article" },
-        { property: "og:image", content: this.post.fields.heroImage.fields.file.url }
+        { property: "og:image", content: `https:${this.post.fields.heroImage.fields.file.url}` }
       ]
     };
   }
