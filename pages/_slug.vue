@@ -68,7 +68,15 @@ export default {
   },
   head() {
     return {
-      title: this.post ? this.post.fields.title : ''
+      title: this.post ? this.post.fields.title : '',
+      meta: [
+        { property: "og:title", content: this.post.fields.title },
+        { property: "og:site_name", content: "Thomas Sohet | Blog" },
+        { property: "og:url", content: this.post.fields.slug },
+        { property: "og:description", content: this.post.fields.description },
+        { property: "og:type", content: "article" },
+        { property: "og:image", content: this.post.fields.heroImage.fields.file.url }
+      ]
     };
   }
 };
