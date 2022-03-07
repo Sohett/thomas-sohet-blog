@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img src="http://images.ctfassets.net/ldb7xbbmychj/1Vje7pDtzHVtoTck4scG0C/31328fd76e214c3d67dd3ab07ebe0757/Thomas_Sohet_CV_picture_-_concrete_background_-_low_quality.png" class='avatar' alt="">
+    <img src="https://images.ctfassets.net/ldb7xbbmychj/1Vje7pDtzHVtoTck4scG0C/31328fd76e214c3d67dd3ab07ebe0757/Thomas_Sohet_CV_picture_-_concrete_background_-_low_quality.png" class='avatar' alt="">
     <component :is="responsiveComponent" class="centered restyled-header">
       Thomas Sohet's blog
     </component>
