@@ -28,7 +28,7 @@
           </p>
           <p class="blog-details">
             <span>Published: {{ humanDate(post.fields.publishDate) }} | </span>
-            <span><img style="width: 18px; height: 18px; margin-bottom: -3px; margin-right: 4px" src="../assets/reading-icon.svg"/>{{ post.fields.readingTime }} min read | </span>
+            <span><img alt="Reading time icon" style="width: 18px; height: 18px; margin-bottom: -3px; margin-right: 4px" src="../assets/reading-icon.svg"/>{{ post.fields.readingTime }} min read | </span>
             <span v-for="tag in post.fields.tags" :key="tag" class='hashtag' style="margin: 2px 6px 2px 0px">
               {{ tag }}
             </span>
