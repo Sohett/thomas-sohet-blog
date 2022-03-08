@@ -9,6 +9,12 @@ const client = contentful.createClient({
 
 export default {
   mode: "universal",
+  modules: [
+    '@nuxtjs/gtm',
+  ],
+  gtm: {
+    id: 'GTM-KNK3C92'
+  },
   /*
    ** Headers of the page
    */
