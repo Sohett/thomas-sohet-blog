@@ -4,7 +4,7 @@
     <component :is="responsiveComponent" class="centered restyled-header">
       Thomas Sohet's blog
     </component>
-    <p class="centered" style="font-size: 16px">Currently CTO @<a href="https://seraphin.be">Seraphin</a>, I am passionate about developing well crafted web products with talented people.</p>
+    <p class="centered" style="font-size: 16px">Currently CTO @<a href="https://www.yago.be">Yago</a>, I am passionate about developing well crafted web products with talented people.</p>
 
     <p class="centered">
       <a target="_blank" href='https://www.linkedin.com/in/thomas-sohet-5291a868/'>Linkedin</a> - <a target="_blank" href="https://github.com/Sohett">Github</a> - <a target="_blank" href="https://twitter.com/thomas_sohet">Twitter</a>
