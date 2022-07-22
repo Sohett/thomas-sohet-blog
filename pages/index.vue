@@ -4,7 +4,7 @@
       <toggle-theme/>
       <about-me title></about-me>
       <p style="text-align: center;">
-        This is just a blog about topics that are important to me, such as <span class='hashtag'>#tech</span> <span class='hashtag'>#product mana</span> <span class='hashtag'>#management</span> <span class='hashtag'>#devOps</span>. I share thoughts and experiences from my career. Hopefully you can find some interesting pieces for you. Don't hesitate to reach out to discuss more about it.
+        This is a blog about topics that are important to me, such as <span class='hashtag'>#tech</span> <span class='hashtag'>#product mana</span> <span class='hashtag'>#management</span> <span class='hashtag'>#devOps</span>. I share thoughts and experiences from my career. Hopefully you can find some interesting pieces for you. Don't hesitate to reach out to discuss more about it.
       </p>
     </div>
     <div class="blog-posts">
@@ -74,7 +74,7 @@ export default {
   },
   head: {
     title: "Thomas Sohet | Blog"
-  }
+  },
 };
 </script>
 

@@ -67,7 +67,7 @@ export default {
       this.$modal.show('imageModal');
     }
   },
-  head() {
+  head () {
     return {
       title: this.post ? this.post.fields.title : '',
       meta: [
@@ -76,8 +76,20 @@ export default {
         { property: "og:url", content: this.post.fields.slug },
         { property: "og:description", content: this.post.fields.description },
         { property: "og:type", content: "article" },
+        { property: "article:author", content: "Thomas Sohet" },
+        { property: "article:published_date", content: this.humanDate(this.post.fields.publishDate) },
         { property: "og:image", content: `https:${this.post.fields.heroImage.fields.file.url}` }
-      ]
+      ],
+      seo: {
+        baseUrl: this.post.fields.slug,
+        name: "Thomas Sohet | Blog",
+        title: this.post.fields.title,
+        description: this.post.fields.description,
+        keywords: this.post.fields.tags,
+        canonical: 'auto',
+        author: "Thomas Sohet",
+        'openGraph.image': `https:${this.post.fields.heroImage.fields.file.url}`,
+      }
     };
   }
 };
